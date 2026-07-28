@@ -59,12 +59,12 @@ $Sections = @(
         RepoNote = ''
         Bullets  = @(
             'Built a human-gated autonomous build pipeline that carries a written spec from queue to verified, promoted code: each task is routed for required context, approved by a human, executed by a context-shielded agent, then graded by a separate agent that can fail the build.'
-            'Completed 61 specs end to end and authored ~60 reusable skills, on deterministic PowerShell tooling (sequence manifest, crash-recovery markers, promotion-reconciliation gates) covered by Pester suites.'
+            'Completed 57 specs end to end and authored 56 reusable skills, on deterministic PowerShell tooling (sequence manifest, crash-recovery markers, promotion-reconciliation gates) covered by Pester suites.'
             'Compounds each build into reusable assets -- routing rules, lint rules, skills -- so a failure mode is diagnosed once and never re-debugged.'
         )
     }
     [pscustomobject]@{
-        Heading  = 'Production n8n Service | 2025-Present'
+        Heading  = 'Production n8n Service | 2026-Present'
         Repo     = 'am-torr/gunpla_project_01'
         RepoNote = ''
         Bullets  = @(
@@ -245,9 +245,12 @@ $ascii    = Convert-ToAscii -Text $original
 $report = [System.Collections.Generic.List[string]]::new()
 $body   = [System.Collections.Generic.List[string]]::new()
 
+$anyPrivate = $false
+
 foreach ($s in $Sections) {
     $isPrivate = Get-RepoIsPrivate -Slug $s.Repo
     $report.Add(('  {0,-34} isPrivate={1}' -f $s.Repo, $isPrivate))
+    if ($isPrivate) { $anyPrivate = $true }
 
     $heading = $s.Heading
     if ($isPrivate) { $heading += $PrivateLabel }
@@ -262,6 +265,14 @@ foreach ($s in $Sections) {
     $body.Add('')
     foreach ($b in $s.Bullets) { $body.Add(('- {0}' -f $b)) }
 }
+
+# Repos above are private by default. Emit an access note ONLY while at least one
+# still is, so the line retires itself automatically if they are ever opened up.
+if ($anyPrivate) {
+    $body.Add('')
+    $body.Add('_The repositories above are private. Read-only access can be granted on request -- happy to walk through any of the code._')
+}
+
 $body.Add('')
 
 # ---------------------------------------------------------------------------

@@ -33,10 +33,10 @@ Supabase | PostgreSQL/pgvector | n8n | HuggingFace | RAG | LLM Orchestration
 Repository: [am-torr/skills](https://github.com/am-torr/skills)
 
 - Built a human-gated autonomous build pipeline that carries a written spec from queue to verified, promoted code: each task is routed for required context, approved by a human, executed by a context-shielded agent, then graded by a separate agent that can fail the build.
-- Completed 61 specs end to end and authored ~60 reusable skills, on deterministic PowerShell tooling (sequence manifest, crash-recovery markers, promotion-reconciliation gates) covered by Pester suites.
+- Completed 57 specs end to end and authored 56 reusable skills, on deterministic PowerShell tooling (sequence manifest, crash-recovery markers, promotion-reconciliation gates) covered by Pester suites.
 - Compounds each build into reusable assets -- routing rules, lint rules, skills -- so a failure mode is diagnosed once and never re-debugged.
 
-#### Production n8n Service | 2025-Present (Private Repository)
+#### Production n8n Service | 2026-Present (Private Repository)
 
 Repository: [am-torr/gunpla_project_01](https://github.com/am-torr/gunpla_project_01)
 
@@ -59,6 +59,8 @@ Repository: [am-torr/i-want-a-text-diff-viewer](https://github.com/am-torr/i-wan
 - Privacy-first local web app (React + TypeScript + Express) comparing two resume versions across all four DOCX/PDF pairings -- no upload, no third-party API call, no login.
 - Extracts and normalizes text from both binary formats, groups changes by resume section using heading-synonym mapping, flags resume-specific risks, and exports a self-contained local HTML report.
 - Covered by unit tests, a four-pairing smoke test, and Playwright end-to-end tests; the document-processing patterns it produced were captured as reusable skills.
+
+_The repositories above are private. Read-only access can be granted on request -- happy to walk through any of the code._
 
 ---
 
