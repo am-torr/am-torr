@@ -20,9 +20,14 @@ My niche is the gap most teams struggle with: **robust data plumbing + the AI la
 ---
 
 ### Current Stack
-Python | SQL | Oracle ERP | AWS Glue/Lambda | Docker | FastAPI
-Supabase | PostgreSQL/pgvector | n8n | HuggingFace | RAG | LLM Orchestration
 
+**AI / LLM** -- Claude Code | Claude Agent SDK | Anthropic API (Haiku/Sonnet) | Groq | DeepSeek | Perplexity Sonar | RAG | LLM orchestration
+
+**Pipelines / Automation** -- n8n | FastAPI | Playwright | Docker Compose | scheduled agents
+
+**Data** -- Python | SQL | PostgreSQL/pgvector | Supabase (self-hosted: PostgREST + Kong) | HuggingFace | Oracle ERP | AWS Glue/Lambda
+
+**Engineering** -- TypeScript/React | PowerShell + Pester | Docker | Git
 
 ---
 
@@ -61,11 +66,3 @@ Repository: [am-torr/i-want-a-text-diff-viewer](https://github.com/am-torr/i-wan
 - Covered by unit tests, a four-pairing smoke test, and Playwright end-to-end tests; the document-processing patterns it produced were captured as reusable skills.
 
 _The repositories above are private. Read-only access can be granted on request -- happy to walk through any of the code._
-
----
-
-### Activity
-
-![Arvin's GitHub Stats](https://github-readme-stats.vercel.app/api?username=am-torr&show_icons=true&theme=default&hide_border=true&count_private=true)
-
----
