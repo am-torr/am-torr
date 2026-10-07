@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Arvin</h1>
-<h3 align="center">AI Data Engineer | GenAI Pipelines | Workflow Automation | 10+ yrs Enterprise Data</h3>
+<h3 align="center">Senior Software & Data Engineer | Automation, Agentic Systems & Enterprise Data</h3>
 
 <p align="center">
   <a href="https://linkedin.com/in/arvintorralba012">
@@ -11,58 +11,66 @@
 
 ### About Me
 
-I'm an AI Data Engineer working at the intersection of **data engineering, workflow automation, and modern GenAI**. I build AI-powered data pipelines that connect legacy and enterprise systems (Oracle ERP, AWS data stacks) with LLMs and retrieval systems.
+I'm a senior software and data engineer working at the intersection of **enterprise data, workflow automation, and agentic AI**.
 
-Over the last year, I've shipped production-grade **RAG systems**, **multi-agent LLM pipelines**, and **real-time scraping workflows** - often taking projects from prototype to production in under 60 hours. Before that, I spent a decade in enterprise data work across IBM, Accenture, and Cognizant, building and operating ETL jobs, AWS Glue/Lambda pipelines, and large-scale SQL workloads.
+My background is 10+ years across Oracle/SQL/PLSQL, enterprise integrations, and production support, followed by hands-on Python/AWS data-engineering work with Glue/PySpark pipelines. More recently, I've been building personal portfolio systems around **n8n, APIs, PostgreSQL/Supabase, Claude Code, Codex, Claude Agent SDK, MCP, and human-gated agent workflows**.
 
-My niche is the gap most teams struggle with: **robust data plumbing + the AI layer on top** (LLM orchestration, retrieval, enrichment, monitoring). I'm currently focused on AI/data engineering roles where I can design end-to-end pipelines, wire LLMs into real business data, and automate the glue between tools and platforms.
+The common thread in my work is operational ownership: understand the whole flow, make failures observable, keep risky actions bounded, and verify the result instead of trusting a tool or agent simply because it reported success.
 
 ---
 
 ### Current Stack
 
-**AI / LLM** -- Claude Code | Claude Agent SDK | Anthropic API (Haiku/Sonnet) | Groq | DeepSeek | Perplexity Sonar | RAG | LLM orchestration
+**AI / Agentic** -- Claude Code | Codex | Claude Agent SDK | Anthropic API | MCP | Human-in-the-Loop | independent agent checking
 
-**Pipelines / Automation** -- n8n | FastAPI | Playwright | Docker Compose | scheduled agents
+**Pipelines / Automation** -- n8n | FastAPI | Playwright | Docker Compose | REST/webhooks | scheduled workflows
 
-**Data** -- Python | SQL | PostgreSQL/pgvector | Supabase (self-hosted: PostgREST + Kong) | HuggingFace | Oracle ERP | AWS Glue/Lambda
+**Data** -- Python | PySpark | SQL | PL/SQL | PostgreSQL | Supabase | AWS Glue | S3 | Lambda
 
-**Engineering** -- TypeScript/React | PowerShell + Pester | Docker | Git
+**Engineering / Ops** -- TypeScript/React | PowerShell + Pester | Git | GitHub Actions | CloudWatch | OpenSearch/Kibana
 
 ---
 
 ### Featured Projects
 
-#### EOS (Executive Operating System) & Ralph Loop | 2026 (Private Repository)
-
-Repository: [am-torr/skills](https://github.com/am-torr/skills)
-
-- Built a human-gated autonomous build pipeline that carries a written spec from queue to verified, promoted code: each task is routed for required context, approved by a human, executed by a context-shielded agent, then graded by a separate agent that can fail the build.
-- Completed 57 specs end to end and authored 56 reusable skills, on deterministic PowerShell tooling (sequence manifest, crash-recovery markers, promotion-reconciliation gates) covered by Pester suites.
-- Compounds each build into reusable assets -- routing rules, lint rules, skills -- so a failure mode is diagnosed once and never re-debugged.
-
-#### Production n8n Service | 2026-Present (Private Repository)
+#### Gunpla Scarcity Content Pipeline | 2026 (Public)
 
 Repository: [am-torr/gunpla_project_01](https://github.com/am-torr/gunpla_project_01)
 
-- Operates a self-hosted 19-service Docker Compose stack in production: Python/Playwright scrapers, a scheduler, n8n workflow orchestration, self-hosted Supabase (PostgreSQL + PostgREST + Kong), nginx, and a URL shortener.
-- Runs an end-to-end scrape -> queue -> batch -> publish pipeline turning scraped retail inventory into scheduled social posts, with idempotent dedup and repost-cooldown rules enforced in the database.
-- Migrated the data layer off hosted Supabase onto self-hosted PostgreSQL + PostgREST + Kong, keeping the cloud project as a rollback path.
+- Built a self-hosted n8n pipeline for low-stock Gunpla items: **Ingest -> Queue -> Batch -> Publish**, with Python/Playwright scraping, PostgreSQL/Supabase state, Facebook Graph API publishing, and Docker Compose.
+- The core path has successfully posted to Facebook. JavaScript Code nodes handle deduplication, transformations, formatting, payload construction, and API response/status handling.
+- Reliability controls include content fingerprinting/idempotency, repost-cooldown rules, retry/fallback handling, and persisted staging/queue/batch states so a workflow success message is not the only evidence that a post completed.
 
-#### Autonomous Operations Agent | 2026 (Private Repository)
+#### EOS (Executive Operating System) & Ralph Loop | 2026 (Private)
 
-Repository: [am-torr/gunpla_project_01](https://github.com/am-torr/gunpla_project_01) -- subsystem: `scripts/lowstock_agent`
+- A human-gated agent orchestration system that moves build-ready PRDs through routing/validation, explicit approval, isolated scratch execution, independent checking, and promotion.
+- The Executor cannot self-certify its own work: a separately identified Checker can fail the task, and failed output is not promoted.
+- Includes deterministic PowerShell/Pester tooling for queue state, crash recovery, promotion/reconciliation, audit receipts, and reusable skills/lessons.
 
-- Built a Claude Agent SDK pipeline that detects low-stock inventory and drafts publish-ready copy for human review; it runs alongside the production n8n flow and never auto-publishes.
-- Enforces a hard database write boundary -- the agent writes only to its own drafts and price-history tables and reads the live publishing queue read-only through a stored procedure -- so an agent fault cannot corrupt production data.
-- Self-corrects with a generate-and-check loop that rewrites captions until an automated checker passes, using a two-tier model split (cheap classifier, stronger writer) and an offline dry-run mode for testing without live scrapes or writes.
+#### Low-Stock Operations Agent | 2026 (Private)
 
-#### Resume-Diff Web App | 2026 (Private Repository)
+- Built around the **Claude Agent SDK** for the same low-stock domain as the n8n pipeline, but with a deliberately separate safety boundary.
+- The agent prepares drafts for review, writes only to its own draft/price-history data, and reads the live publishing queue through a read-only database path rather than having unrestricted write access.
+- Uses generate-and-check behavior plus an offline/dry-run path so agent behavior can be tested without directly publishing or writing into the live post queue.
 
-Repository: [am-torr/i-want-a-text-diff-viewer](https://github.com/am-torr/i-want-a-text-diff-viewer)
+#### DaVinci Resolve MCP Server | 2026 (Private)
 
-- Privacy-first local web app (React + TypeScript + Express) comparing two resume versions across all four DOCX/PDF pairings -- no upload, no third-party API call, no login.
-- Extracts and normalizes text from both binary formats, groups changes by resume section using heading-synonym mapping, flags resume-specific risks, and exports a self-contained local HTML report.
-- Covered by unit tests, a four-pairing smoke test, and Playwright end-to-end tests; the document-processing patterns it produced were captured as reusable skills.
+- Built a FastMCP stdio server that exposes DaVinci Resolve's official Python scripting API as **18 Claude Code tools** across project, timeline, clip, color, and render operations.
+- Uses structured JSON error envelopes instead of crashing when Resolve is unavailable.
+- Covered by unit tests plus a real MCP stdio-handshake test with a stubbed Resolve environment.
 
-_The repositories above are private. Read-only access can be granted on request -- happy to walk through any of the code._
+#### Resume / JD Diff | 2026 (Public Portfolio Edition)
+
+Repository: [am-torr/resume-jd-diff](https://github.com/am-torr/resume-jd-diff)
+
+- Privacy-first local React/TypeScript + Express app for DOCX/PDF resume comparison and resume-vs-JD analysis.
+- The public repository is a runnable portfolio edition with simplified comparison engines; the private canonical project contains the deeper section/risk and layered JD-matching logic.
+- Includes generated fixtures, smoke tests, unit/E2E coverage, and no requirement to upload personal documents to a third-party service.
+
+---
+
+### Portfolio Evidence Model
+
+I keep some recruiter-facing projects as **sanitized public portfolio editions** rather than publishing a private development repository wholesale. The goal is to preserve enough real code, tests, architecture, and failure-handling logic to make the work inspectable without exposing credentials-adjacent configuration, local-machine details, internal logs, or unrelated history.
+
+For private projects, I can provide selected screenshots, code excerpts, architecture views, and a walkthrough of the implementation when relevant to a role.
