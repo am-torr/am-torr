@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Arvin</h1>
-<h3 align="center">Senior Software & Data Engineer | Automation, Agentic Systems & Enterprise Data</h3>
+<h3 align="center">AI & Data Engineer | Data Pipelines & LLM Agent Workflows | Python, AWS, SQL</h3>
 
 <p align="center">
   <a href="https://linkedin.com/in/arvintorralba012">
@@ -13,7 +13,7 @@
 
 I build workflow automation and API integrations, with a background in enterprise data and production support.
 
-My experience includes 10+ years with Oracle, SQL/PLSQL and enterprise integrations, followed by Python/AWS data engineering. My recent projects use n8n, PostgreSQL/Supabase, AI agents and MCP. I focus on understanding the full flow, handling failures and checking the result.
+I have 12 years in enterprise software: Oracle, SQL/PLSQL and enterprise integrations, then Python/AWS data engineering. My recent projects use n8n, PostgreSQL/Supabase, AI agents and MCP. I focus on understanding the full flow, handling failures and checking the result.
 
 ---
 
@@ -36,14 +36,7 @@ Code walkthrough available.
 #### Low-Stock Operations Agent (Private prototype)
 
 - Implemented Claude Agent SDK calls for item classification and draft captions.
-- Keeps draft preparation separate from the n8n publishing flow and includes human review controls.
-
-Code walkthrough available.
-
-#### DaVinci Resolve MCP Server (Private prototype)
-
-- Implemented 18 MCP tools for project, timeline, clip, color and render operations.
-- Includes unit tests with a fake backend and MCP protocol test code.
+- Keeps draft preparation separate from the n8n publishing flow; a human review step is planned.
 
 Code walkthrough available.
 
