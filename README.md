@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Arvin</h1>
-<h3 align="center">AI & Data Engineer | Data Pipelines & LLM Agent Workflows | Python, AWS, SQL</h3>
+<h3 align="center">Senior Enterprise Data & Integration Engineer | Human-Gated AI Automation & Verification</h3>
 
 <p align="center">
   <a href="https://linkedin.com/in/arvintorralba012">
@@ -11,9 +11,9 @@
 
 ### About Me
 
-I build workflow automation and API integrations, with a background in enterprise data and production support.
+I am a senior enterprise data and integration engineer with 12 years of production experience across Oracle, SQL/PLSQL, enterprise system integrations, and AWS data operations (owned day-to-day AWS Glue monitoring and support).
 
-I have 12 years in enterprise software: Oracle, SQL/PLSQL and enterprise integrations, then Python/AWS data engineering. My recent projects use n8n, PostgreSQL/Supabase, AI agents and MCP. I focus on understanding the full flow, handling failures and checking the result.
+Since 2025, I have focused on AI automation pipelines built around human review and independent verification using Python, n8n, PostgreSQL/Supabase, AI agents, and MCP. I focus on understanding the full flow, handling failures, and verifying the result.
 
 ---
 
@@ -21,29 +21,29 @@ I have 12 years in enterprise software: Oracle, SQL/PLSQL and enterprise integra
 
 #### Gunpla Scarcity Content Pipeline (Public)
 
-- Built an n8n pipeline for low-stock listings: **Ingest -> Queue -> Batch -> Publish**, using Python/Playwright, PostgreSQL/Supabase and the Facebook Graph API.
-- Added deduplication, content fingerprints, queue state tracking and retry handling. The repository documents successful Facebook publishing.
+- Built an n8n pipeline for low-stock listings: **Ingest -> Queue -> Batch -> Publish**, using Python/Playwright, PostgreSQL/Supabase, Docker Compose, and the Facebook Graph API.
+- Added deduplication, content fingerprints, queue state tracking, and retry handling. The repository documents successful Facebook publishing.
 
 [Source and sample output](https://github.com/am-torr/gunpla_project_01). Approval and archiving are in progress.
 
 #### EOS / Ralph Loop (Private prototype)
 
-- Built approval, checker identity and promotion checks for an agent-assisted engineering workflow.
-- Includes PowerShell/Pester tooling for queue state, recovery and audit receipts.
+- Built approval, checker identity, and promotion checks for an agent-assisted engineering workflow.
+- Includes PowerShell/Pester tooling for queue state, recovery, and audit receipts.
 
 Code walkthrough available.
 
-#### Low-Stock Operations Agent (Private prototype)
+#### Enterprise Data Migration, CDC & Lakehouse Lab (Public)
 
-- Implemented Claude Agent SDK calls for item classification and draft captions.
-- Keeps draft preparation separate from the n8n publishing flow; a human review step is planned.
+- Built a four-stage runnable ETL and migration lab: **Batch Star Schema (v1) -> Incremental CDC + Reconciliation (v2) -> S3/Athena/Glue Lab (v3) -> Airflow + Governance CI/CD (v4)**.
+- Models an Oracle-style OLTP feed migrated into a PostgreSQL warehouse and S3 lakehouse with reconciliation checks and CI/CD.
 
-Code walkthrough available.
+[Source and runnable stages](https://github.com/am-torr/etl-aws-lab).
 
 #### Resume / JD Diff (Public demo)
 
 - Built a local React/TypeScript and Express app for DOCX/PDF comparison and resume-to-JD analysis.
-- Runs without external AI APIs or document uploads to third-party services. The public JD matcher uses shared keywords.
+- Runs without external AI APIs or document uploads to third-party services, backed by Vitest and Playwright E2E tests.
 
 [Source and generated fixtures](https://github.com/am-torr/resume-jd-diff).
 
@@ -51,10 +51,10 @@ Code walkthrough available.
 
 ### Current Stack
 
-**Automation:** Python, n8n, REST APIs, webhooks, FastAPI, Docker.
+**Enterprise Data & Integrations:** SQL/PLSQL, Oracle EBS R12, PostgreSQL, Supabase, REST/XML Integrations, AWS (S3, day-to-day Glue monitoring and support; Athena/Lambda lab).
 
-**Data:** SQL/PLSQL, PostgreSQL, Supabase, AWS Glue/PySpark.
+**Automation:** Python, n8n, REST APIs, webhooks, FastAPI, Docker, Playwright.
 
-**AI and tools:** Claude Agent SDK, MCP, Claude Code, Codex.
+**AI and tools (2025 to present):** Claude Agent SDK, MCP, Claude Code, Codex.
 
-**Application and testing:** TypeScript/React, PowerShell/Pester, GitHub Actions.
+**Application and testing:** TypeScript/React, PowerShell/Pester, Vitest, GitHub Actions.
